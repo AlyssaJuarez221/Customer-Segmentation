@@ -2,24 +2,26 @@
 
 
 ## Overview
-In this project I use a grocery stores customer data in order to cluster customers into groups.
+In this project I use Kmeans, Kmodes and Agglomerative Clustering in order to divide a dataset of grocery store customers into different groups. In doing so It allows a compamy to understand who is buying what products and allows companies to more accurately cater to their customer base.
 
   ### Data
   * Type: Numerical & categorical
-  * Instances:
-  * Features: 
+  * Instances: 2240
+  * Features: 29
 
   ## Models
   * K-modes
   * K-means
-  * Hierarchal
+  * Agglomerative Clustering
   
   ## Performance Comparison 
  TBD 
   
   ## Overview of files in repo
-  * Data - Contains the data used
-  * 
+  * Cleaning - Cleaning of the Dataset
+  * K-means - K-means algorithm
+  * K-modes - K-modes algorithm
+  * Agglomerative Clustering - Agglomerative Clustering algorithm
   
   ## software setup 
   * numpy
