@@ -5,26 +5,20 @@ In this project I use a grocery stores customer data in order to cluster custome
 
   ### Data
   * Type: Numerical & categorical
-  * Instances: 14,999
-  * Features: 10
+  * Instances:
+  * Features: 
 
   ## Models
-  * K-Nearest Neighbors
-  * RandomForest
-  * Naive Bayes 
-  
+  * K-modes
+  * K-means
+  * Hierarchal
   
   ## Performance Comparison 
  TBD 
   
   ## Overview of files in repo
-  * EmployeeData.csv - The dataset
-  * MulticollinearityTest.ipynb - Testing more multicollinearity, Cleaning and changing data to numerical/binary values
-  * PCA.ipynb - Performing PCA
-  * KNearestNeighbors.ipynb - Using KNN classifer model on dataset
-  * NaiveBayesClassifier.ipynb - Using Naive Bayes classifier model on dataset
-  * RandomForestClassifier.ipynb - Using RandomForest classfier model on dataset
-  * Comparison.ipynb - 
+  * Data - Contains the data used
+  * 
   
   ## software setup 
   * numpy
