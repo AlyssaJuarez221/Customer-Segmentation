@@ -1,4 +1,5 @@
-![StoreSales (440 × 388 px)-2](https://user-images.githubusercontent.com/111559921/233234290-cad4540e-2927-49ef-9a68-fe1d6fc52cf6.png)
+![StoreSales (440 × 388 px)](https://user-images.githubusercontent.com/111559921/233491120-9ec8d472-d54e-4295-bccc-57a12a131c89.png)
+
 
 ## Overview
 In this project I use a grocery stores customer data in order to cluster customers into groups.
