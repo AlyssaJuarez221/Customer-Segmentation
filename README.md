@@ -6,58 +6,70 @@
 
 ## Overview
 
-- **Definition of the Tasks / Challenge:** The task is to segment customers to identify distinct groups based on shopping behaviors, income, and demographics, enabling targeted marketing strategies and product offerings.
-- **Your Approach:** We used unsupervised learning models, including K-Means, K-Modes, and Agglomerative Clustering, to categorize customers into meaningful groups. Data preprocessing involved feature engineering, scaling, and dimensionality reduction to improve model performance and interpretability.
-- **Summary of Performance Achieved:** The K-Means model provided the most insightful and well-organized clusters. K-Modes and Agglomerative Clustering yielded less useful results due to less clear group distinctions and overlap in clustering outcomes.
+- **Definition of the Tasks / Challenge:** The task is to segment customers based on their shopping behaviors, income, and demographics to tailor store offerings and marketing strategies effectively. This segmentation helps to ensure that stores are stocked with items that meet the needs of different customer groups, potentially increasing sales and customer satisfaction.
+- **Your Approach:** We utilized unsupervised learning models, specifically K-Means, K-Modes, and Agglomerative Clustering, to group customers into distinct segments. The approach involved preprocessing the data by removing outliers, engineering new features, encoding categorical variables, and performing PCA for dimensionality reduction. This setup facilitated more efficient model processing and better clustering results.
+- **Summary of Performance Achieved:** The K-Means model provided the most useful and interpretable clusters, revealing clear distinctions between customer groups. K-Modes and Agglomerative Clustering produced less informative results, with K-Modes replicating the Agglomerative Clustering results and Agglomerative Clustering providing more clusters than necessary.
 
 ## Summary of Workdone
 
 - **Data:**
-  - **Type:** CSV file with 29 features related to customer demographics, spending habits, and other attributes.
-  - **Size:** Original dataset contained 2240 features, reduced to 29 for analysis. Post-cleaning, the dataset had 2205 instances.
-  - **Instances (Train, Test, Validation Split):** Entire dataset used for clustering with no separate train/test split.
+  - **Type:** CSV file containing 29 features related to customer demographics, spending habits, and other attributes.
+  - **Size:** Original dataset had 2240 features, but analysis was based on 29 features. After cleaning, 2205 instances remained.
+  - **Instances (Train, Test, Validation Split):** The entire dataset was used for clustering without a separate train/test split.
 
-- **Preprocessing / Clean up:** Removed null values and outliers (e.g., age > 120, income > 600K). Created new features such as Customer_For, Age, Spent, Adult, Children, and Household_Size. Encoded categorical variables and performed PCA for dimensionality reduction.
+- **Preprocessing / Clean up:**
+  - Removed null values and outliers, specifically addressing anomalies in age (e.g., 120 years old) and income (e.g., over 600K). This cleaning process reduced the dataset to 2205 instances.
+  - Engineered new features including `Customer_For`, `Age`, `Spent`, `Adult`, `Children`, and `Household_Size`.
+  - Encoded the categorical variable `Education` into numerical values (undergrad, grad, postgrad).
+  - Applied PCA to reduce dimensionality and make the data more manageable for modeling.
 
-- **Data Visualization:** Visualized clusters using graphs to understand the distribution and characteristics of each segment.
+- **Data Visualization:** Various visualizations were used to understand the distribution and characteristics of different customer segments. Detailed visualizations included the results of the clustering models.
 
 ## Problem Formulation
 
-- **Input / Output:** Input features include customer demographics, spending habits, and other attributes. Output is customer segmentation into distinct groups.
+- **Input / Output:** Input features include demographic details, spending habits, and other relevant attributes. The output is customer segmentation into distinct groups.
 - **Models:**
-  - **K-Means:** Chose 4 clusters; provided well-organized groups with actionable insights.
-  - **Agglomerative Clustering:** Used 5 clusters; results were less organized and detailed.
-  - **K-Modes:** Results were identical to Agglomerative Clustering, showing overlap in clustering results.
-- **Loss, Optimizer, Other Hyperparameters:** Details of hyperparameters used for each model were adjusted based on validation results.
+  - **K-Means:** Used 4 clusters. Performed efficiently with clear and actionable groupings:
+    - **Group 1:** 20-65k income, highest spenders, mostly without kids, buys luxury items, majority of shoppers, coupon motivated.
+    - **Group 2:** 20-80k income, 20-50 years old, spends the least, small new families, buys the least luxury items.
+    - **Group 3:** Lowest income (10-50k), likely single-child matured families, buys luxury items.
+    - **Group 4:** Largest income (0-100k), large families, less spending on luxury, coupon motivated, uses the most coupons per visit.
+  - **Agglomerative Clustering:** Suggested 5 clusters, but resulted in less useful groupings:
+    - **Group 1:** 0-80k income, second highest spenders, large family, purchases some luxury.
+    - **Group 2:** 20-90k income, older family, buys more luxury, coupon motivated.
+    - **Group 3:** Lowest income (0-50k), mostly young families, spends equally on grocery and luxury, buys cheaper meats.
+    - **Group 4:** 30-100k income, older family, mainly purchases luxury items.
+    - **Group 5:** 35-120k income, adults without kids, shops mainly at grocery stores, prefers groceries over luxury.
+  - **K-Modes:** Results were identical to Agglomerative Clustering, indicating overlap in clustering results.
 
 ## Training
 
-- **How You Trained:** Implemented models using Python libraries. Training involved running each algorithm and evaluating cluster quality through visual and quantitative assessments.
+- **How You Trained:** Models were implemented using Python libraries. Training involved applying each algorithm and evaluating cluster quality through visual inspection and clustering metrics.
 - **Training Curves:** Not applicable as clustering does not involve training curves.
-- **Stopping Criteria:** Based on cluster validity and interpretability.
-- **Difficulties:** Handling large number of features and ensuring meaningful cluster separation.
+- **Stopping Criteria:** Based on the clarity and usefulness of clusters.
+- **Difficulties:** Managing a large number of features and ensuring that clusters were meaningful and distinct.
 
 ## Performance Comparison
 
-- **Key Performance Metrics:** Clarity of clusters, interpretability, and usefulness for targeted marketing.
+- **Key Performance Metrics:** Clarity of clusters, interpretability, and practical usefulness for marketing and store stocking.
 - **Results:**
-  - **K-Means:** Best performance with clear and actionable clusters.
-  - **Agglomerative Clustering and K-Modes:** Provided less useful results with overlapping clusters.
-- **Visualizations:** Included cluster distribution and characteristics.
+  - **K-Means:** Provided the most insightful and actionable clusters.
+  - **Agglomerative Clustering and K-Modes:** Results were less distinct and overlapping.
+- **Visualizations:** Included cluster distribution and characteristics for each model.
 
 ## Conclusions
 
-- **Summary:** K-Means was the most effective model for segmenting customers, providing the best insights into shopping behaviors. K-Modes and Agglomerative Clustering were less effective, with overlapping or less distinct clusters.
+- **Summary:** K-Means was the most effective model, providing the most useful and interpretable clusters. K-Modes and Agglomerative Clustering were less effective, with K-Modes results mirroring those of Agglomerative Clustering and Agglomerative Clustering resulting in less organized groups.
 
 ## Future Work
 
-- **Next Steps:** Use larger datasets to refine clusters and improve segmentation accuracy. Explore other clustering algorithms and validation techniques.
-- **Further Studies:** Investigate additional features and external data sources to enhance customer understanding and segmentation.
+- **Next Steps:** Explore larger datasets and additional features to refine clusters and enhance segmentation accuracy. Consider evaluating other clustering algorithms and validation techniques to improve results.
+- **Further Studies:** Investigate the impact of external data sources and additional features on customer segmentation.
 
 ## How to Reproduce Results
 
-- **Instructions:** Follow the preprocessing steps outlined, apply K-Means, Agglomerative Clustering, and K-Modes models, and evaluate clusters based on the provided metrics.
-- **Resources:** Recommended platforms include Jupyter Notebook or Google Colab for running the analysis.
+- **Instructions:** Follow the preprocessing steps described, apply K-Means, Agglomerative Clustering, and K-Modes models, and evaluate clusters based on visual and quantitative metrics.
+- **Resources:** Recommended tools include Jupyter Notebook or Google Colab for running the analysis.
 
 ## Overview of Files in Repository
 
@@ -65,7 +77,7 @@
 - **preprocess.ipynb:** Handles data cleaning, feature engineering, and preprocessing.
 - **visualization.ipynb:** Creates visualizations for data exploration and cluster analysis.
 - **models.py:** Contains implementations of K-Means, Agglomerative Clustering, and K-Modes.
-- **training-models.ipynb:** Runs clustering algorithms and evaluates results.
+- **training-models.ipynb:** Executes clustering algorithms and evaluates results.
 - **performance.ipynb:** Compares and visualizes clustering performance.
 
 ## Software Setup
@@ -76,7 +88,7 @@
 ## Data
 
 - **Download Link:** [Customer Personality Analysis Dataset](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis).
-- **Preprocessing Steps:** Follow cleaning, feature engineering, and PCA steps as described in the preprocessing notebook.
+- **Preprocessing Steps:** Follow the cleaning, feature engineering, and PCA steps described in the preprocessing notebook.
 
 ## Training
 
@@ -84,7 +96,7 @@
 
 ## Performance Evaluation
 
-- **Evaluation Instructions:** Use visualization and comparison metrics to assess clustering quality.
+- **Evaluation Instructions:** Use visualization and comparison metrics provided to assess clustering quality.
 
 ## Citations
 
