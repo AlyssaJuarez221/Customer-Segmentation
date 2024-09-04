@@ -6,8 +6,8 @@
 
 ## Overview
 
-- **Definition of the Tasks / Challenge:** The task is to segment customers based on their shopping behaviors, income, and demographics to tailor store offerings and marketing strategies effectively. This segmentation helps to ensure that stores are stocked with items that meet the needs of different customer groups, potentially increasing sales and customer satisfaction.
-- **Your Approach:** We utilized unsupervised learning models, specifically K-Means, K-Modes, and Agglomerative Clustering, to group customers into distinct segments. The approach involved preprocessing the data by removing outliers, engineering new features, encoding categorical variables, and performing PCA for dimensionality reduction. This setup facilitated more efficient model processing and better clustering results.
+- **Objective:** The task is to segment customers based on their shopping behaviors, income, and demographics to tailor store offerings and marketing strategies effectively. This segmentation helps to ensure that stores are stocked with items that meet the needs of different customer groups, potentially increasing sales and customer satisfaction.
+- **Approach:** We utilized unsupervised learning models, specifically K-Means, K-Modes, and Agglomerative Clustering, to group customers into distinct segments. The approach involved preprocessing the data by removing outliers, engineering new features, encoding categorical variables, and performing PCA for dimensionality reduction. This setup facilitated more efficient model processing and better clustering results.
 - **Summary of Performance Achieved:** The K-Means model provided the most useful and interpretable clusters, revealing clear distinctions between customer groups. K-Modes and Agglomerative Clustering produced less informative results, with K-Modes replicating the Agglomerative Clustering results and Agglomerative Clustering providing more clusters than necessary.
 
 ## Summary of Workdone
@@ -44,7 +44,7 @@
 
 ## Training
 
-- **How You Trained:** Models were implemented using Python libraries. Training involved applying each algorithm and evaluating cluster quality through visual inspection and clustering metrics.
+- **How the Models were Trained:** Models were implemented using Python libraries. Training involved applying each algorithm and evaluating cluster quality through visual inspection and clustering metrics.
 - **Training Curves:** Not applicable as clustering does not involve training curves.
 - **Stopping Criteria:** Based on the clarity and usefulness of clusters.
 - **Difficulties:** Managing a large number of features and ensuring that clusters were meaningful and distinct.
@@ -89,14 +89,6 @@
 
 - **Download Link:** [Customer Personality Analysis Dataset](https://www.kaggle.com/datasets/imakash3011/customer-personality-analysis).
 - **Preprocessing Steps:** Follow the cleaning, feature engineering, and PCA steps described in the preprocessing notebook.
-
-## Training
-
-- **Training Instructions:** Apply clustering algorithms as detailed in the training notebook.
-
-## Performance Evaluation
-
-- **Evaluation Instructions:** Use visualization and comparison metrics provided to assess clustering quality.
 
 ## Citations
 
